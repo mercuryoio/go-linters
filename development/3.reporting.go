@@ -9,13 +9,15 @@ import (
 func runReport(pass *analysis.Pass) (interface{}, error) {
 	for _, file := range pass.Files {
 		ast.Inspect(file, func(n ast.Node) bool {
-			pass.Report(analysis.Diagnostic{
-				Pos:            file.Pos(),
-				End:            file.End(),
-				Category:       lintCategory,
-				Message:        lintMessage,
-				SuggestedFixes: []analysis.SuggestedFix{getSuggestedFix()},
-			})
+			if funcNode, ok := n.(*ast.StructType); ok {
+				pass.Report(analysis.Diagnostic{
+					Pos:            funcNode.Pos(),
+					End:            funcNode.End(),
+					Category:       lintCategory,
+					Message:        lintMessage,
+					SuggestedFixes: []analysis.SuggestedFix{getSuggestedFix()},
+				})
+			}
 			return true
 		})
 	}
