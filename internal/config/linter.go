@@ -1,7 +1,6 @@
 package config
 
 import (
-	"flag"
 	"fmt"
 	"go/ast"
 	"reflect"
@@ -12,7 +11,6 @@ import (
 
 var (
 	osGetEnvFix = analysis.SuggestedFix{Message: "see config domain"}
-	flagSet     flag.FlagSet
 )
 
 const (
@@ -31,10 +29,9 @@ const (
 
 func NewAnalyzer() *analysis.Analyzer {
 	return &analysis.Analyzer{
-		Name:  cfgName,
-		Doc:   cfgDoc,
-		Run:   run,
-		Flags: flagSet,
+		Name: cfgName,
+		Doc:  cfgDoc,
+		Run:  run,
 	}
 }
 
