@@ -14,3 +14,12 @@
 
 * https://pkg.go.dev/golang.org/x/tools/go/analysis
 * https://github.com/fatih/structtag
+
+## Build
+
+`go build -buildmode=plugin plugin/plugin.go`
+
+## Run
+
+* tool `go run ./cmd/main.go ./testdata/*`
+* golangci-lint `golangci-lint run -v --timeout 10m0s ./testdata/*`
