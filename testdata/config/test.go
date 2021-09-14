@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-type UserData struct {
+type UserDataService struct {
 	Host string `envconfig:"USER_DATA_SERVICE_HOST" `
 	Port string `envcofig:"USER_DATA_SERVICE_PORT" default:"8080"`
 }
