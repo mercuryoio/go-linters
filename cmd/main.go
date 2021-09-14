@@ -1,11 +1,11 @@
 package main
 
 import (
-	"golang.org/x/tools/go/analysis/singlechecker"
+	"golang.org/x/tools/go/analysis/multichecker"
 
-	"github.com/mercuryoio/go-config/internal/config"
+	"github.com/mercuryoio/go-config/linters/config"
 )
 
 func main() {
-	singlechecker.Main(config.NewAnalyzer())
+	multichecker.Main(config.NewAnalyzer())
 }

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/mercuryoio/go-config/internal/config"
+	"github.com/mercuryoio/go-config/linters/config"
 
 	"golang.org/x/tools/go/analysis"
 )
