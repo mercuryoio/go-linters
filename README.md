@@ -8,3 +8,8 @@
 
 * `go run ./cmd/main.go ./testdata/*`
 * `golangci-lint run -v --timeout 10m0s ./testdata/config/test.go`
+
+## Developers
+[Mercuryo.io](https://mercuryo.io)
+## Contribute
+PRs are welcome!
